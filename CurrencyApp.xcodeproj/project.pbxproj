@@ -16,6 +16,13 @@
 		031FAEAB2A37567B00D44960 /* currencyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031FAEA92A37567B00D44960 /* currencyCell.swift */; };
 		031FAEAC2A37567B00D44960 /* currencyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 031FAEAA2A37567B00D44960 /* currencyCell.xib */; };
 		031FAEAE2A37570500D44960 /* CurrencyDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031FAEAD2A37570500D44960 /* CurrencyDetails.swift */; };
+		031FAEB12A38E5E600D44960 /* currencyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031FAEB02A38E5E600D44960 /* currencyModel.swift */; };
+		031FAEB52A38F30B00D44960 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031FAEB32A38F30B00D44960 /* APIClient.swift */; };
+		031FAEB62A38F30B00D44960 /* URLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031FAEB42A38F30B00D44960 /* URLs.swift */; };
+		031FAEBB2A38F7EE00D44960 /* mainHomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031FAEB82A38F7EE00D44960 /* mainHomePresenter.swift */; };
+		031FAEBC2A38F7EE00D44960 /* mainHomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031FAEB92A38F7EE00D44960 /* mainHomeVC.swift */; };
+		031FAEBD2A38F7EE00D44960 /* mainHomeConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031FAEBA2A38F7EE00D44960 /* mainHomeConfigurator.swift */; };
+		E4F765CF8C47B3983774211F /* Pods_CurrencyApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8929FE2A8D9635DB7D84A7A1 /* Pods_CurrencyApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +37,15 @@
 		031FAEA92A37567B00D44960 /* currencyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = currencyCell.swift; sourceTree = "<group>"; };
 		031FAEAA2A37567B00D44960 /* currencyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = currencyCell.xib; sourceTree = "<group>"; };
 		031FAEAD2A37570500D44960 /* CurrencyDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyDetails.swift; sourceTree = "<group>"; };
+		031FAEB02A38E5E600D44960 /* currencyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = currencyModel.swift; sourceTree = "<group>"; };
+		031FAEB32A38F30B00D44960 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		031FAEB42A38F30B00D44960 /* URLs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLs.swift; sourceTree = "<group>"; };
+		031FAEB82A38F7EE00D44960 /* mainHomePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mainHomePresenter.swift; sourceTree = "<group>"; };
+		031FAEB92A38F7EE00D44960 /* mainHomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mainHomeVC.swift; sourceTree = "<group>"; };
+		031FAEBA2A38F7EE00D44960 /* mainHomeConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mainHomeConfigurator.swift; sourceTree = "<group>"; };
+		301B6021FCA2F70F443ED06D /* Pods-CurrencyApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CurrencyApp.debug.xcconfig"; path = "Target Support Files/Pods-CurrencyApp/Pods-CurrencyApp.debug.xcconfig"; sourceTree = "<group>"; };
+		8929FE2A8D9635DB7D84A7A1 /* Pods_CurrencyApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CurrencyApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		98A87BACCBF68089ED4717C7 /* Pods-CurrencyApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CurrencyApp.release.xcconfig"; path = "Target Support Files/Pods-CurrencyApp/Pods-CurrencyApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4F765CF8C47B3983774211F /* Pods_CurrencyApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -48,6 +65,8 @@
 			children = (
 				031FAE942A374C1400D44960 /* CurrencyApp */,
 				031FAE932A374C1400D44960 /* Products */,
+				F9314E5BD4889DD0011B1FFD /* Pods */,
+				5C725EA7145C570E48AD0929 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,6 +81,9 @@
 		031FAE942A374C1400D44960 /* CurrencyApp */ = {
 			isa = PBXGroup;
 			children = (
+				031FAEB72A38F7D900D44960 /* Home */,
+				031FAEB22A38F30B00D44960 /* Network */,
+				031FAEAF2A38E5A400D44960 /* Models */,
 				031FAE952A374C1400D44960 /* AppDelegate.swift */,
 				031FAE972A374C1400D44960 /* SceneDelegate.swift */,
 				031FAE992A374C1400D44960 /* ViewController.swift */,
@@ -76,6 +98,50 @@
 			path = CurrencyApp;
 			sourceTree = "<group>";
 		};
+		031FAEAF2A38E5A400D44960 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				031FAEB02A38E5E600D44960 /* currencyModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		031FAEB22A38F30B00D44960 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				031FAEB32A38F30B00D44960 /* APIClient.swift */,
+				031FAEB42A38F30B00D44960 /* URLs.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		031FAEB72A38F7D900D44960 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				031FAEBA2A38F7EE00D44960 /* mainHomeConfigurator.swift */,
+				031FAEB82A38F7EE00D44960 /* mainHomePresenter.swift */,
+				031FAEB92A38F7EE00D44960 /* mainHomeVC.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		5C725EA7145C570E48AD0929 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8929FE2A8D9635DB7D84A7A1 /* Pods_CurrencyApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F9314E5BD4889DD0011B1FFD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				301B6021FCA2F70F443ED06D /* Pods-CurrencyApp.debug.xcconfig */,
+				98A87BACCBF68089ED4717C7 /* Pods-CurrencyApp.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -83,9 +149,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 031FAEA62A374C1800D44960 /* Build configuration list for PBXNativeTarget "CurrencyApp" */;
 			buildPhases = (
+				9BEFD37C6D6285716329F0C3 /* [CP] Check Pods Manifest.lock */,
 				031FAE8E2A374C1300D44960 /* Sources */,
 				031FAE8F2A374C1300D44960 /* Frameworks */,
 				031FAE902A374C1300D44960 /* Resources */,
+				DF5955FB633995EE0DAC9748 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -143,12 +211,60 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		9BEFD37C6D6285716329F0C3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CurrencyApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DF5955FB633995EE0DAC9748 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CurrencyApp/Pods-CurrencyApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CurrencyApp/Pods-CurrencyApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CurrencyApp/Pods-CurrencyApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		031FAE8E2A374C1300D44960 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				031FAEB12A38E5E600D44960 /* currencyModel.swift in Sources */,
+				031FAEB52A38F30B00D44960 /* APIClient.swift in Sources */,
+				031FAEBC2A38F7EE00D44960 /* mainHomeVC.swift in Sources */,
+				031FAEBB2A38F7EE00D44960 /* mainHomePresenter.swift in Sources */,
+				031FAEBD2A38F7EE00D44960 /* mainHomeConfigurator.swift in Sources */,
 				031FAEAE2A37570500D44960 /* CurrencyDetails.swift in Sources */,
+				031FAEB62A38F30B00D44960 /* URLs.swift in Sources */,
 				031FAEAB2A37567B00D44960 /* currencyCell.swift in Sources */,
 				031FAE9A2A374C1400D44960 /* ViewController.swift in Sources */,
 				031FAE962A374C1400D44960 /* AppDelegate.swift in Sources */,
@@ -294,6 +410,7 @@
 		};
 		031FAEA72A374C1800D44960 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 301B6021FCA2F70F443ED06D /* Pods-CurrencyApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -323,6 +440,7 @@
 		};
 		031FAEA82A374C1800D44960 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 98A87BACCBF68089ED4717C7 /* Pods-CurrencyApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
