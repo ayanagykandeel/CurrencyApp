@@ -13,7 +13,7 @@ struct URLS {
 
     static let BASE_URL = "http://data.fixer.io/api/"
     static let accessKey = "b6f87c687029ada9af030328f45e8edf"
-    
+    static let exchangeAcessKey = "24eef42b6b573a9f154bbee5"
     static let allCurrenciesURL          : String = BASE_URL + "latest"
     static let convertCurrencyWithSymbol : String = "https://open.er-api.com/v6/latest/"
 

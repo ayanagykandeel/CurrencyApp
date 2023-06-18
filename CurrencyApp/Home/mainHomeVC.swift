@@ -31,6 +31,8 @@ class mainHomeVC:  UIViewController , homeView{
     @IBOutlet weak var drop1: UITextField!
     @IBOutlet var virtView1: UIView!
 
+    @IBOutlet var detailsBtn: UIButton!
+
     private var configurator: mainHomeConfigurator = mainHomeConfiguratorImplementation()
     var presenter: mainHomePresenter!
     let defaults = UserDefaults.standard
@@ -39,14 +41,14 @@ class mainHomeVC:  UIViewController , homeView{
     var farray : [Double] = []
     var farray1 : [Int] = []
     var selectedCurrencyFrom = 0.0
+    var selectedCurrencyName = ""
     var newUpdatedCurrencies : [String: Double] = [:]
-    
+    var flag = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         configurator.configure(viewController: self)
-      
         presenter.getAllCurrencies()
     
     }
@@ -82,17 +84,11 @@ class mainHomeVC:  UIViewController , homeView{
         dropDown.show()
         dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
           print("Selected item: \(item) at index: \(index)")
-       
+            selectedCurrencyName = item
             drop.text =  item
             presenter.getAllCurrenciesByBase(base: item)
             
-           
-//            selectedCurrencyFrom = farray[index]
-//            let amountVal = Double(amountLbl.text!)
-//            let total = amountVal! * selectedCurrencyFrom
-//            resultLbl.isHidden = false
-//            resultLbl.text = String(format: "%.2f", total)
-//
+
         }
     }
     
@@ -126,44 +122,85 @@ class mainHomeVC:  UIViewController , homeView{
             drop1.text =  item
             
             for i in newUpdatedCurrencies{
-                
                 if item == i.key {
                     print(i.value)
                     selectedCurrencyFrom = i.value
-                    
+                    flag = 1
                 }
             }
-          
-            
-            
         }
+        
     }
     
     func reloadDataWithNewBaseCurrencies(array : [String: Double]){
         newUpdatedCurrencies = array
+        flag = 0
     }
 
     
     @IBAction func OKAction(_ sender: Any) {
 
+      
+        resultLbl.text = ""
         if drop1.text != "" && drop.text != "" && amountLbl.text != "" {
             
+            
+            if flag == 0 {
+                
+                for i in newUpdatedCurrencies{
+                    if drop1.text == i.key {
+                        print(i.value)
+                        selectedCurrencyFrom = i.value
+                        flag = 1
+                    }
+                }
+            }
+                        
             let amountVal = Double(amountLbl.text!)
                       let total = amountVal! * selectedCurrencyFrom
                       resultLbl.isHidden = false
+                      detailsBtn.isHidden = false
                       resultLbl.text = String(format: "%.2f", total)
         }
         
     }
     
+    func calculateCnoversion(from: String, to: String, amount: Double){
+        
+        
+    }
+    
+    @IBAction func versaViceAction(_ sender: Any) {
+      //  flag = 0
+//        if drop.text != "" && drop1.text != ""{
+//            let txt1 = drop.text
+//            let txt2 = drop1.text
+//
+//            drop.text = txt2
+//            drop1.text = txt1
+//
+//
+//        }
+    
+    }
+    
     
     
     @IBAction func detailsVcAction(_ sender: Any) {
+        
+        let currencies = newUpdatedCurrencies.prefix(10)
         let vc = storyboard?.instantiateViewController(withIdentifier: "CurrencyDetails") as! CurrencyDetails
+        for i in currencies{
+            vc.currencyListNmaes.append(i.key)
+            vc.currencyListValues.append(i.value)
+        }
+        vc.base = drop.text!
         self.present(vc, animated: true)
     }
     
+
 }
+
 
 
 

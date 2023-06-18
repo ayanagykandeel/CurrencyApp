@@ -39,13 +39,13 @@
                                         <rect key="frame" x="0.0" y="0.0" width="159.5" height="79"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FROM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TSL-xY-O4e">
-                                                <rect key="frame" x="0.0" y="0.0" width="57.5" height="24"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="159.5" height="24"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LXJ-BJ-Xvw">
-                                                <rect key="frame" x="0.0" y="29" width="4" height="50"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LXJ-BJ-Xvw">
+                                                <rect key="frame" x="0.0" y="29" width="159.5" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="7lC-EA-8u9"/>
                                                 </constraints>
@@ -54,7 +54,19 @@
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                             </textField>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="LXJ-BJ-Xvw" secondAttribute="trailing" id="2Ms-wx-knt"/>
+                                            <constraint firstAttribute="trailing" secondItem="TSL-xY-O4e" secondAttribute="trailing" id="HB3-JW-OMr"/>
+                                        </constraints>
                                     </stackView>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hs3-8O-ce2">
+                                        <rect key="frame" x="167" y="0.0" width="0.0" height="79"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="twirl-vice-versa-2"/>
+                                        <connections>
+                                            <action selector="versaViceAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6id-Ld-lev"/>
+                                        </connections>
+                                    </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Ixf-eK-pHC">
                                         <rect key="frame" x="174.5" y="0.0" width="159.5" height="79"/>
                                         <subviews>
@@ -64,7 +76,7 @@
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pAY-UX-TTF">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pAY-UX-TTF">
                                                 <rect key="frame" x="0.0" y="29" width="159.5" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="NOh-Oe-VoC"/>
@@ -177,6 +189,7 @@
                     </view>
                     <connections>
                         <outlet property="amountLbl" destination="GRu-2T-V9q" id="qqz-ZH-Gio"/>
+                        <outlet property="detailsBtn" destination="QvV-9F-eWq" id="FMt-6Q-tVF"/>
                         <outlet property="drop" destination="LXJ-BJ-Xvw" id="uOn-pT-lBy"/>
                         <outlet property="drop1" destination="pAY-UX-TTF" id="ze4-YO-a2t"/>
                         <outlet property="resultLbl" destination="KXZ-L6-5XS" id="IoF-8H-mbr"/>
@@ -199,6 +212,10 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ZcM-hh-F3v">
                                 <rect key="frame" x="20" y="144" width="374" height="698"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="uxT-kh-7Qz" id="zUY-WH-Xgc"/>
+                                    <outlet property="delegate" destination="uxT-kh-7Qz" id="7ta-Zg-QWQ"/>
+                                </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 $ equal :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kO3-22-xoL">
                                 <rect key="frame" x="160" y="96" width="94" height="24"/>
@@ -231,6 +248,10 @@
                             <constraint firstItem="9r0-N0-4Wj" firstAttribute="top" secondItem="EGe-9d-Efz" secondAttribute="top" constant="13" id="suG-MJ-hbF"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="baseVal" destination="kO3-22-xoL" id="Obd-6D-da2"/>
+                        <outlet property="currencyListTableView" destination="ZcM-hh-F3v" id="hGs-Kd-np0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jvl-Qx-wP6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -239,6 +260,7 @@
     </scenes>
     <resources>
         <image name="arrow.backward" catalog="system" width="128" height="98"/>
+        <image name="twirl-vice-versa-2" width="100" height="30"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

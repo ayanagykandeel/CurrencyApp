@@ -69,7 +69,7 @@ class mainHomePresenterClass: mainHomePresenter {
               //  self.view.hideLoadingIndicator()
                 print(msg!.result)
                 if msg?.result == "success" {
-                    print("success")
+                    print("success base - \(base)")
 
                     self.ratesBaseValues = (msg?.rates)!
              
